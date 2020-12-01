@@ -127,6 +127,11 @@ namespace Chinchulines.Entities
             if (laserSphere.Intersects(spaceshipSphere))
                 return CollisionType.Laser;
 
+            BoundingSphere enemySphere = new BoundingSphere(spaceshipPosition + new Vector3(0, 0, 1), 0.09f);
+
+            if (laserSphere.Intersects(enemySphere))
+                return CollisionType.Enemy;
+
             return CollisionType.None;
         }
     }

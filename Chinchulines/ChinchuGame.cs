@@ -307,7 +307,15 @@ namespace Chinchulines
 
                 venusRotation += .005f;
 
-                _laserManager.UpdateLaserAndCheckCollision(movementSpeed, _spaceshipPosition, _health);
+                CollisionType laserColision =_laserManager.UpdateLaserAndCheckCollision(movementSpeed, _spaceshipPosition, _health);
+                if (laserColision != CollisionType.None)
+                {
+                    if (laserColision == CollisionType.Enemy)
+                    {
+                        EM.EnemyShooted(_spaceshipPosition);
+                    }
+
+                }
 
                 shipSphere = new BoundingSphere(_spaceshipPosition, 0.09f);
                 CollisionType collisionType = CheckCollision(shipSphere);
@@ -492,7 +500,9 @@ namespace Chinchulines
                         , View, Projection);
 
                 EM.Draw(View, Projection);
-                EM.DrawEnemigoVigilante(View, Projection, _spaceshipPosition, _spaceshipRotation, _cameraPosition, _cameraDirection, Graphics);
+
+                //if(enemigosVigilante < 1)
+                    EM.DrawEnemigoVigilante(View, Projection, _spaceshipPosition, _spaceshipRotation, _cameraPosition, _cameraDirection, Graphics);
 
                 _trench.Draw(View, Projection, _lightDirection, Graphics);
 

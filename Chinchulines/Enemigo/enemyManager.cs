@@ -82,5 +82,19 @@ namespace Chinchulines.Enemigo
                 enemigo.DrawEnemy2(View, Projection, playerpos, spaceshipRotation, cameraPosition, cameraDirection, graphics);
             }
         }
+
+        internal void EnemyShooted(Vector3 spaceshipPosition)
+        {
+            foreach (Enemy enemigo in EnemigosVigilantes)
+            {
+                if (enemigo.enemyPosition == spaceshipPosition + new Vector3(0, 0, 1))
+                {
+                    enemigo.GetShooted();
+
+                    if(enemigo.GetHealth() < 0)
+                        EnemigosVigilantes.Remove(enemigo);
+                }
+            }
+        }
     }
 }

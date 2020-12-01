@@ -2,6 +2,6 @@
 {
     public enum CollisionType
     {
-        None, Trench, Laser
+        None, Trench, Laser, Enemy
     }
 }

@@ -107,6 +107,16 @@ namespace Chinchulines.Enemigo
             }
         }
 
+        internal int GetHealth()
+        {
+            return enemyHealth;
+        }
+
+        internal void GetShooted()
+        {
+            enemyHealth -= 50;
+        }
+
         public void FlyDown()
         {
             if (RotatedDown >= 90)
