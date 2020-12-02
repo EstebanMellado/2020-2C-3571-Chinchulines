@@ -28,6 +28,7 @@ namespace Chinchulines.Menu
             Content.RootDirectory = "Content";
         }
 
+
         private Song menuMusic;
 
         /// <summary>
@@ -84,8 +85,6 @@ namespace Chinchulines.Menu
             }
 
             _currentState.Update(gameTime);
-
-            _currentState.PostUpdate(gameTime);
 
             base.Update(gameTime);
         }
