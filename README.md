@@ -12,6 +12,7 @@ Mellado, Esteban  |  Vera, Inti
 
 ## Capturas
 Carpeta: Screeshots
+[screnshot1](https://github.com/EstebanMellado/2020-2C-3571-Chinchulines/blob/master/Screenshots/Enemigos.png)
 
 ## Game Play
 Carpeta Gameplay
